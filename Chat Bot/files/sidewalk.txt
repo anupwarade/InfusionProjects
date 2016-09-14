@@ -1,0 +1,4 @@
+slow : Unplug the router and plug it back in.
+internet : Contact your ISP.
+word : Contact the IT help desk at ithelpdesk.mmm.com
+setup : Figure it out and don't be dumb, it's just word. It can't be that hard.
