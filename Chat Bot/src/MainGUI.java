@@ -1,5 +1,4 @@
-//Shamelessly stolen from http://codereview.stackexchange.com/questions/25461/simple-chat-room-swing-gui
-//Should only be used for demo.
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -13,6 +12,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -142,14 +144,15 @@ public class MainGUI {
                         + "\n");
                
                 String response = "";
-                String searchValue = doStringSearch(messageBox.getText());
-                if (searchValue.equals("N/A")){
+                ArrayList<String> searchValues = doStringSearch(messageBox.getText().toLowerCase());
+                if (searchValues.isEmpty()){
+                	messageBox.setText("");
                 	chatBox.append("<ChatBot>: Nothing found!\n");
                 }
                 else {
                 	
                 	try {
-                		response = getResponse(searchValue);
+                		response = getResponse(searchValues);
                 	} catch (IOException e) {
 					// TODO Auto-generated catch block
                 		e.printStackTrace();
@@ -161,43 +164,54 @@ public class MainGUI {
             messageBox.requestFocusInWindow();
         }
 
-		private String doStringSearch(String text) {
+		private ArrayList<String> doStringSearch(String text) {
 			String[] tokens = text.split("\\s+");
+			ArrayList<String> issueList = new ArrayList<>();
 			for (int i = 0; i < tokens.length; i++){
-				if (tokens[i].equals("slow")){
-					return "slow";
+				if (tokens[i].toLowerCase().equals("slow")){
+					issueList.add("slow");
+					//return "slow";
 				}
-				if (tokens[i].equals("internet")){
-					return "internet";
+				if (tokens[i].toLowerCase().equals("internet")){
+					issueList.add("internet");
+					//return "internet";
 				}
-				if (tokens[i].equals("word")){
-					return "word";
+				if (tokens[i].toLowerCase().equals("word")){
+					issueList.add("word");
+					//return "word";
 				}
-				if (tokens[i].equals("setup")){
-					return "setup";
+				if (tokens[i].toLowerCase().equals("setup")){
+					issueList.add("setup");
+					//return "setup";
 				}
 			}
-			return "N/A";
+			return issueList;
 		}
 
-		private String getResponse(String text) throws IOException {
+		private String getResponse(ArrayList<String> searchValues) throws IOException {
 			// TODO Auto-generated method stub
 			//System.out.println(text);
 			String currentDirectory = new java.io.File( "." ).getCanonicalPath();
-			String workingDirectory = currentDirectory + "\\files";
+			String workingDirectory = currentDirectory + "\\src\\files";
 			File folder = new File(workingDirectory);
 			File[] allFiles = folder.listFiles();
 			String response = "";
 			for (int i = 0; i < allFiles.length; i++){
-				response += parseFile(allFiles[i], text);
+				for (int j = 0; j < searchValues.size(); j++){
+					response += parseFile(allFiles[i], searchValues.get(j).toLowerCase()) + "\n";
+				}
 			}
 			return response;
 		}
 
 		private String parseFile(File file, String text) throws IOException {
 			// TODO Auto-generated method stub
-			
-			BufferedReader br = new BufferedReader(new FileReader(file));
+			String currentDirectory = new java.io.File( "." ).getCanonicalPath();
+			String workingDirectory = currentDirectory + "\\src\\sidewalk.txt";
+			System.out.println(workingDirectory);
+			//InputStream in = getClass().getClassLoader().getResourceAsStream(workingDirectory);
+			InputStream in = getClass().getClassLoader().getResourceAsStream("sidewalk.txt");
+			BufferedReader br = new BufferedReader(new InputStreamReader(in));
 			String line = null;
 			String response = "";
 			while ((line = br.readLine()) != null){
@@ -217,16 +231,10 @@ public class MainGUI {
 				}
 				if (printLine == true){
 					response += line;
-					//System.out.println(line);
-					//System.out.println(response.indexOf(':'));
 					response = response.substring(response.indexOf(':')+2);
 					break;
-					//System.out.println(line);
 				}
 				
-//				if (line.toLowerCase().contains(keyword)){
-//					System.out.println(line);
-//				}
 			}
 			return response;
 			
