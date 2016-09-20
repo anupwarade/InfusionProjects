@@ -1,0 +1,478 @@
+HTML 
+{
+    background-image: url('image/mesh.png');
+}
+BODY
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    top: 0px !important;
+    margin: 0px;
+}
+.FormButton {
+    font: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100px;
+	border-style: outset;
+}
+
+.PageTitle
+{
+    margin: 0px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+}
+.SurveyLink
+{
+    color: black;
+    background-color:Yellow;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    vertical-align: middle;
+    text-align:center;
+    white-space:nowrap;
+	border-style:ridge;
+}
+.SurveyThanks
+{
+    color: black;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    vertical-align: middle;
+    text-align:center;
+}
+.FormTable
+{
+    background-color: white;
+    border: 1px solid black;
+}
+.FormLabel
+{
+    color: black;
+    background-color: whitesmoke;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    padding-right: 4px;
+    padding-left: 12px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    vertical-align: top;
+    text-align: right;
+    white-space:nowrap;
+}
+.FormText
+{
+    color: black;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    padding-right: 2px;
+    padding-left: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.FormTextWrap
+{
+    color: black;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    padding-right: 2px;
+    padding-left: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    vertical-align: top;
+}
+.SearchTable
+{
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
+.SearchLabel
+{
+    color: black;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    vertical-align: middle;
+    text-align: right;
+    white-space:nowrap;
+}
+.SearchText
+{
+    color: black;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.MainPageTitle
+{
+    background-image: url('image/3Mheader.png');
+    padding-left: 6px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+.SubTitle
+{
+    color: Black;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: middle;
+    white-space:nowrap;
+}
+.TableTitle
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background: darkgray;
+    background: linear-gradient(to bottom, white , darkgray);
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-decoration: none;
+    text-align: center;
+    vertical-align:bottom;
+    white-space:nowrap;
+}
+.GridFooter
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: black;
+    background-color: lightgray;
+    padding-right: 6px;
+    padding-left: 6px;
+    text-decoration: none;
+    text-align: right;
+    vertical-align:top;
+}
+.GridTitle
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    background: darkgray;
+    background: linear-gradient(to bottom, white , darkgray);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    vertical-align:bottom;
+    text-align: center;
+}
+.GridTitle a:link
+{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.GridTitle a:visited
+{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.GridEvenText
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: black;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: whitesmoke;
+    text-align: left;
+    vertical-align: top;
+}
+.GridOddText
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: black;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: white;
+    text-align: left;
+    vertical-align: top;
+}
+
+.GridStyle
+{
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: Black;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: Black;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: Black;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: Black;
+}
+A.visited
+{
+	color:Blue;
+}
+A
+{
+	color:Blue;
+}
+
+#menubackground
+{
+    height: 24px;
+    background: #272882;
+    background: linear-gradient(to right, #272882 , #00B9E7);
+}
+.menuline
+{
+    height: 0.05em;
+    background: black;
+}
+
+.menuLevel1
+{
+    font: 14px Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px black;
+    display: block;
+    text-align: left;
+    padding-top: 1px;
+    padding-left: 2px;
+    padding-right: 4px;
+    padding-bottom: 1px;
+    border-right-style: ridge;
+    vertical-align: bottom;
+     
+}
+.menuhover1
+{
+    font-weight: bold;
+    color: white;
+}
+
+.menuLevel2
+{
+    font: 14px Verdana, Geneva, sans-serif;
+    background: whitesmoke;
+    color: black;
+    display: block;
+    text-align: left;
+    padding-top: 1px;
+    padding-left: 2px;
+    padding-right: 4px;
+    padding-bottom: 1px;
+    vertical-align: bottom;
+     
+}
+.menuhover2
+{
+    font-weight: bold;
+    background: yellow;
+    color: black;
+}
+.menuSelected 
+{
+    color: yellow;
+    text-shadow: 2px 2px 4px black;
+}
+.PagerRow
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    color: black;
+    font-weight: bold;
+    vertical-align: middle;
+    background: darkgray;
+    background: linear-gradient(to bottom, white , darkgray);
+}
+
+.MenuOuterBox 
+{
+    display: inline-block;
+    width: 180px;
+    height: 120px;
+    position: relative;
+}
+
+.MenuMiddleBox 
+{
+    display: inline-block;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-color: black;
+    border-style:ridge;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.75);
+    background: #3498db;
+    background: radial-gradient(ellipse at center, #3498db 0%, #2c3e50 100%);
+}
+
+.MenuBox 
+{
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+    text-decoration:none;
+}
+.MenuBox a:visited
+{
+    text-decoration:none;
+    color: white;
+}
+
+.MenuBox:hover
+{
+    color: Yellow;
+}
+.KMtable
+{
+    background-color: white;
+    border: 1px solid black;
+}
+.Outagetable
+{
+    background-color: white;
+    border: 1px solid black;
+    max-width: 60%;
+}
+.iFrame
+{
+    margin: 0px;
+    width:100%;
+    background-color: white;
+    height:calc(100vh - 105px);
+ }
+.TranslateBar
+{
+    margin: 0px;
+    height: 30px;
+    color: black;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    vertical-align: middle;
+    text-align: right;
+    white-space:nowrap;
+ }
+
+.goog-tooltip 
+{
+    display: none !important;
+}
+.goog-tooltip:hover 
+{
+    display: none !important;
+}
+.goog-text-highlight 
+{
+    background-color: transparent !important;
+    border: none !important; 
+    box-shadow: none !important;
+}
+.goog-te-banner-frame.skiptranslate 
+{
+    display: none !important;
+} 
+
+.HotLink
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+.MenuTitle
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background: darkgray;
+    background: linear-gradient(to bottom, white , darkgray);
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-decoration: none;
+    text-align: center;
+    vertical-align:middle;
+    white-space:nowrap;
+    border: 5px;
+    border-style:ridge;
+    border-color: gray;
+}
+.MenuLink
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-decoration: none;
+    text-align: left;
+    vertical-align:middle;
+    white-space:nowrap;
+}
+.MenuTable
+{
+    background-color: whitesmoke;
+    border: 5px;
+    border-style:ridge;
+    border-color: gray;
+}
