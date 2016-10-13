@@ -14,6 +14,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -28,7 +29,7 @@ import javax.swing.UIManager;
 
 public class MainGUI {
 
-    String      appName     = "Colt Chat v0.1";
+    String      appName     = "Benny";
     MainGUI     mainGUI;
     JFrame      newFrame    = new JFrame(appName);
     JButton     sendMessage;
@@ -57,7 +58,7 @@ public class MainGUI {
         newFrame.setVisible(false);
         preFrame = new JFrame(appName);
         usernameChooser = new JTextField(15);
-        JLabel chooseUsernameLabel = new JLabel("Pick a username:");
+        JLabel chooseUsernameLabel = new JLabel("Please enter your name:");
         usernameChooser.addActionListener(new enterServerButtonListener());
         JButton enterServer = new JButton("Enter Chat Server");
         enterServer.addActionListener(new enterServerButtonListener());
@@ -103,8 +104,11 @@ public class MainGUI {
 
         chatBox = new JTextArea();
         chatBox.setEditable(false);
-        chatBox.setFont(new Font("Serif", Font.PLAIN, 15));
+        chatBox.setFont(new Font("SANS_SERIF", Font.PLAIN, 15));
         chatBox.setLineWrap(true);
+        
+        chatBox.append("<Benny>: Hello " + username + "! My name is Benny, and I am a chat bot designed to assist you with any issues that you"
+        		+ " may have. In the field below, please enter your question and I will do my best to answer it! \n");
 
         mainPanel.add(new JScrollPane(chatBox), BorderLayout.CENTER);
 
@@ -147,7 +151,8 @@ public class MainGUI {
                 ArrayList<String> searchValues = doStringSearch(messageBox.getText().toLowerCase());
                 if (searchValues.isEmpty()){
                 	messageBox.setText("");
-                	chatBox.append("<ChatBot>: Nothing found!\n");
+                	chatBox.append("<Benny>: I'm sorry, I could not find an answer to your question. For furthur assistance, please"
+                			+ " go to ithelp.mmm.com. If you have any other questions, I will be happy to try and answer them! \n");
                 }
                 else {
                 	
@@ -158,7 +163,7 @@ public class MainGUI {
                 		e.printStackTrace();
                 	}
                 	messageBox.setText("");
-                	chatBox.append("<ChatBot>: " + response + "\n");
+                	chatBox.append("<Benny>: " + response + "\n");
                 }
             }
             messageBox.requestFocusInWindow();
@@ -191,54 +196,92 @@ public class MainGUI {
 		private String getResponse(ArrayList<String> searchValues) throws IOException {
 			// TODO Auto-generated method stub
 			//System.out.println(text);
-			String currentDirectory = new java.io.File( "." ).getCanonicalPath();
-			String workingDirectory = currentDirectory + "\\src\\files";
-			File folder = new File(workingDirectory);
-			File[] allFiles = folder.listFiles();
+			//String currentDirectory = new java.io.File( "." ).getCanonicalPath();
+			//String workingDirectory = currentDirectory + "\\src\\files";
+			//File folder = new File(workingDirectory);
+			//File[] allFiles = folder.listFiles();
+			//String response = "";
+//			for (int i = 0; i < allFiles.length; i++){
+//				for (int j = 0; j < searchValues.size(); j++){
+//					if (j != searchValues.size()-1){
+//						response += parseFile(allFiles[i], searchValues.get(j).toLowerCase()) + "\n";
+//					}
+//					else{
+//						response += parseFile(allFiles[i], searchValues.get(j).toLowerCase());
+//					}
+//				}
+//			}
+//			return response;
 			String response = "";
-			for (int i = 0; i < allFiles.length; i++){
-				for (int j = 0; j < searchValues.size(); j++){
-					response += parseFile(allFiles[i], searchValues.get(j).toLowerCase()) + "\n";
+			for (int i = 0; i < searchValues.size(); i++){
+				if (i != searchValues.size()-1){
+					response += retrieveResponse(searchValues.get(i).toLowerCase()) + "\n";
+				}
+				else{
+					response += retrieveResponse(searchValues.get(i).toLowerCase());
 				}
 			}
 			return response;
 		}
 
-		private String parseFile(File file, String text) throws IOException {
-			// TODO Auto-generated method stub
-			String currentDirectory = new java.io.File( "." ).getCanonicalPath();
-			String workingDirectory = currentDirectory + "\\src\\sidewalk.txt";
-			System.out.println(workingDirectory);
-			//InputStream in = getClass().getClassLoader().getResourceAsStream(workingDirectory);
-			InputStream in = getClass().getClassLoader().getResourceAsStream("sidewalk.txt");
-			BufferedReader br = new BufferedReader(new InputStreamReader(in));
-			String line = null;
-			String response = "";
-			while ((line = br.readLine()) != null){
-				//split into word tokens
-				//String lineNonAlphanumeric = line.toLowerCase().replaceAll("[^A-Za-z0-9 ]", "");
-				//System.out.println(lineNonAlphanumeric);
-				String[] lineTokens = line.split("\\s+");
-				//System.out.println(lineTokens.length);
-				boolean printLine = false;
-				
-				for (int i = 0; i < lineTokens.length; i++){
-					//System.out.println(lineTokens[i]);
-					if (lineTokens[i].equals(text)){
-						//System.out.println("Yay");
-						printLine = true;
-					}
-				}
-				if (printLine == true){
-					response += line;
-					response = response.substring(response.indexOf(':')+2);
-					break;
-				}
-				
+		private String retrieveResponse(String response) {
+			//String response = "";
+			if (response.equals("slow")){
+				return "If your internet is slow, then unplug the router and plug it back in.";
 			}
-			return response;
-			
+			if (response.equals("internet")){
+				return "For internet problems, contact your ISP.";
+			}
+			if (response.equals("word")){
+				return "For issues regarding Microsoft Word, contact the IT help desk at ithelpdesk.mmm.com.";
+			}
+			if (response.equals("setup")){
+				return "For issues setting up Microsoft Office, contact the IT help desk at ithelpdesk.mmm.com.";
+			}
+			return null;
 		}
+
+//		private String parseFile(File file, String text) throws IOException {
+//			// TODO Auto-generated method stub
+////			String currentDirectory = new java.io.File( "." ).getCanonicalPath();
+////			String workingDirectory = currentDirectory + "\\src\\sidewalk.txt";
+////			System.out.println(workingDirectory);
+//			//InputStream in = getClass().getClassLoader().getResourceAsStream(workingDirectory);
+//			//InputStream in = getClass().getResourceAsStream("src\\sidewalk.txt");
+//			//BufferedReader br = new BufferedReader(new InputStreamReader(in));
+//			//File fileNew = new File("sidewalk.txt");
+//			//System.out.println(fileNew.getName());
+//			//URL url = getClass().getResource("/sidewalk.txt");
+//			//InputStream in = url.openStream();
+//			InputStream in = MainGUI.class.getResourceAsStream("sidewalk.txt");
+//			BufferedReader br = new BufferedReader(new InputStreamReader(in));
+//			String line = null;
+//			String response = "";
+//			while ((line = br.readLine()) != null){
+//				//split into word tokens
+//				//String lineNonAlphanumeric = line.toLowerCase().replaceAll("[^A-Za-z0-9 ]", "");
+//				//System.out.println(lineNonAlphanumeric);
+//				String[] lineTokens = line.split("\\s+");
+//				//System.out.println(lineTokens.length);
+//				boolean printLine = false;
+//				
+//				for (int i = 0; i < lineTokens.length; i++){
+//					//System.out.println(lineTokens[i]);
+//					if (lineTokens[i].equals(text)){
+//						//System.out.println("Yay");
+//						printLine = true;
+//					}
+//				}
+//				if (printLine == true){
+//					response += line;
+//					response = response.substring(response.indexOf(':')+2);
+//					break;
+//				}
+//				
+//			}
+//			return response;
+//			
+//		}
     }
 
     String  username;
