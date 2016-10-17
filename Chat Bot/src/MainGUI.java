@@ -26,6 +26,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
+import javax.jnlp.*;
+
 public class MainGUI {
 
     String      appName     = "Colt Chat v0.1";
