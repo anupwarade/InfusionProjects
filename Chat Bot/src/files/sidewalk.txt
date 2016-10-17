@@ -1,4 +1,0 @@
-slow : If your internet is slow, then unplug the router and plug it back in.
-internet : For internet problems, contact your ISP.
-word : For issues regarding Microsoft Word, contact the IT help desk at ithelpdesk.mmm.com.
-setup : For issues setting up Microsoft Office, contact the IT help desk at ithelpdesk.mmm.com.
